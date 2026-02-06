@@ -1,0 +1,57 @@
+{
+    "updated_at": "2026-02-06T09:20:00Z",
+    "working_on": {
+        "feature": "Build & Sync Stabilization",
+        "task": "Fixing Android build errors and Desktop sync format",
+        "status": "completed",
+        "files": [
+            "sync_manager.py",
+            "libs.versions.toml",
+            "app/build.gradle.kts",
+            "themes.xml",
+            "PatientDetailDialog.kt"
+        ]
+    },
+    "pending_tasks": [
+        {
+            "task": "Kiểm tra sync data từ Desktop v4.4 lên Android sau khi build thành công",
+            "priority": "high"
+        },
+        {
+            "task": "Fix warning statusBarColor deprecated trong Theme.kt Android",
+            "priority": "low"
+        },
+        {
+            "task": "Tạo script auto-deploy APK lên điện thoại qua ADB",
+            "priority": "medium"
+        }
+    ],
+    "recent_changes": [
+        {
+            "type": "fix",
+            "description": "Fix lỗi format ngày 'tháng' trong sync_manager.py"
+        },
+        {
+            "type": "build",
+            "description": "Upgrade AGP từ 8.5 lên 8.9.1 cho ClinicViewer"
+        },
+        {
+            "type": "fix",
+            "description": "Sửa lỗi theme Material3 không load được trong Android XML"
+        },
+        {
+            "type": "fix",
+            "description": "Thay thế icon ContentCopy bằng Add do thiếu lib extended icons"
+        }
+    ],
+    "decisions_made": [
+        {
+            "decision": "Dùng Theme.AppCompat.DayNight.NoActionBar trong themes.xml",
+            "reason": "Tránh kéo thêm Google Material library cồng kềnh cho app thuần Compose"
+        },
+        {
+            "decision": "Upgrade AGP 8.9.1",
+            "reason": "Yêu cầu bắt buộc của các dependencies Compose/Lifecycle mới nhất"
+        }
+    ]
+}
