@@ -1,36 +1,29 @@
 {
-    "meta": {
-        "schema_version": "1.1.0",
-        "awf_version": "4.0.2"
-    },
-    "project": {
-        "name": "ClinicViewer Android",
-        "type": "Android Application (Kotlin/Compose)",
-        "status": "In Development/Functional"
-    },
-    "tech_stack": {
-        "language": "Kotlin",
-        "ui_framework": "Jetpack Compose",
-        "build_system": "Gradle (Android Gradle Plugin 8.9.1)",
-        "database": "Supabase (Postman-kt, Realtime-kt)",
-        "media": "Coil for Image Loading"
-    },
-    "features": [
-        "Xem danh sách bệnh nhân từ Supabase",
-        "Xem chi tiết bệnh nhân và đơn thuốc",
-        "Giao diện tối (Dark Mode) hiện đại",
-        "Tự động cập nhật dữ liệu qua Realtime"
-    ],
-    "knowledge_items": {
-        "patterns": [
-            "Single Activity Architecture",
-            "Compose Navigation",
-            "Repository pattern with Supabase SDK"
-        ],
-        "gotchas": [
-            "AGP 8.9.1 yêu cầu compileSdk 34+",
-            "Theme Material3 trong XML resource cần thư viện Google Material (đã fallback sang AppCompat cho NoActionBar)",
-            "Icon ContentCopy nằm trong extended icons; đã dùng icon Add làm thay thế nếu không muốn kéo thêm lib"
-        ]
-    }
+  "meta": {
+    "schema_version": "1.1.0",
+    "awf_version": "4.0.2"
+  },
+  "project": {
+    "name": "ClinicViewer",
+    "type": "Android App (Viewer)",
+    "status": "Active"
+  },
+  "tech_stack": {
+    "frontend": "Jetpack Compose, Material 3",
+    "backend": "Supabase (Postgrest)",
+    "language": "Kotlin"
+  },
+  "features": [
+    "Patient List with Infinite Scroll",
+    "Patient Search",
+    "Detailed Patient Information",
+    "Medical History (Diagnosis & Prescription)",
+    "Copy to Clipboard (Prescription & Phone)"
+  ],
+  "knowledge_items": {
+    "gotchas": [
+      "DOB field in legacy data can contain strings like '18 tháng', need sanitization",
+      "Status bar can overlap content if statusBarsPadding is not used"
+    ]
+  }
 }

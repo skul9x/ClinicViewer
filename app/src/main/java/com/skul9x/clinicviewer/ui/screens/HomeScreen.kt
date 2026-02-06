@@ -24,6 +24,9 @@ import com.skul9x.clinicviewer.data.repository.PatientRepository
 import com.skul9x.clinicviewer.ui.theme.*
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.asPaddingValues
 
 @Composable
 fun HomeScreen(
@@ -93,17 +96,18 @@ fun HomeScreen(
         }
     }
 
+    val statusBarHeight = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+    
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(BrandDarkBg)
-            .statusBarsPadding()
     ) {
         // --- Header Section ---
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(start = 20.dp, end = 20.dp, top = statusBarHeight, bottom = 0.dp)
         ) {
             Text(
                 text = "PK Ngọc Trường",

@@ -1,57 +1,40 @@
 {
-    "updated_at": "2026-02-06T09:20:00Z",
+    "updated_at": "2026-02-06T12:48:00Z",
     "working_on": {
-        "feature": "Build & Sync Stabilization",
-        "task": "Fixing Android build errors and Desktop sync format",
+        "feature": "UI Enhancements & Bug Fixes",
+        "task": "Finalized Documentation & Sync Fix",
         "status": "completed",
         "files": [
-            "sync_manager.py",
-            "libs.versions.toml",
-            "app/build.gradle.kts",
-            "themes.xml",
-            "PatientDetailDialog.kt"
+            "HomeScreen.kt",
+            "PatientDetailDialog.kt",
+            "sync_manager.py"
         ]
     },
-    "pending_tasks": [
-        {
-            "task": "Kiểm tra sync data từ Desktop v4.4 lên Android sau khi build thành công",
-            "priority": "high"
-        },
-        {
-            "task": "Fix warning statusBarColor deprecated trong Theme.kt Android",
-            "priority": "low"
-        },
-        {
-            "task": "Tạo script auto-deploy APK lên điện thoại qua ADB",
-            "priority": "medium"
-        }
-    ],
     "recent_changes": [
         {
-            "type": "fix",
-            "description": "Fix lỗi format ngày 'tháng' trong sync_manager.py"
-        },
-        {
-            "type": "build",
-            "description": "Upgrade AGP từ 8.5 lên 8.9.1 cho ClinicViewer"
-        },
-        {
-            "type": "fix",
-            "description": "Sửa lỗi theme Material3 không load được trong Android XML"
+            "type": "feature",
+            "description": "Infinite Scroll & UI Separation",
+            "files": [
+                "HomeScreen.kt",
+                "PatientDetailDialog.kt"
+            ]
         },
         {
             "type": "fix",
-            "description": "Thay thế icon ContentCopy bằng Add do thiếu lib extended icons"
+            "description": "DOB validation for Supabase sync",
+            "files": [
+                "sync_manager.py"
+            ]
         }
     ],
     "decisions_made": [
         {
-            "decision": "Dùng Theme.AppCompat.DayNight.NoActionBar trong themes.xml",
-            "reason": "Tránh kéo thêm Google Material library cồng kềnh cho app thuần Compose"
+            "decision": "Set invalid DOB to Null",
+            "reason": "Supabase requires DATE type, '18 tháng' is unparseable"
         },
         {
-            "decision": "Upgrade AGP 8.9.1",
-            "reason": "Yêu cầu bắt buộc của các dependencies Compose/Lifecycle mới nhất"
+            "decision": "Add statusBarsPadding to global Column",
+            "reason": "Fix UI overlay issues on modern Android displays"
         }
     ]
 }
